@@ -28,7 +28,7 @@ def external_reverse(
         domain = external_conf.get('domain')
         urlconf = external_conf.get('urlconf')
     except KeyError:
-        raise NoReverseMatch('Error fetching external url config')
+        raise NoReverseMatch('Error fetching external url config: \'{}\''.format(external))
     scheme = external_conf.get('scheme', urlconfs_settings.DEFAULT_SCHEME)
 
     path = reverse(
