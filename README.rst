@@ -6,11 +6,8 @@ django-urlconfs-xtd
 
 .. contents:: :local:
 
-Getting started
----------------
-
 Installation
-~~~~~~~~~~~~
+-------------
 
 Just run:
 
