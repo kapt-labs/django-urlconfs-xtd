@@ -15,7 +15,8 @@ from urlconfs_xtd.conf import settings as urlconfs_settings
 def external_reverse(
         viewname, external, args=None, kwargs=None, current_app=None):
     """
-    Reverses an external URL from the given parameters.
+    Reverses an external URL from the given parameters. Returns only the domain
+    URL if the view name is not defined.
 
     :param viewname: the name of the URL
     :param external: the external id whose url config will be used for URL reversing
@@ -33,5 +34,5 @@ def external_reverse(
 
     path = reverse(
         viewname, urlconf=urlconf, args=args, kwargs=kwargs,
-        current_app=current_app)
-    return urlunparse((scheme, domain, path or '', None, None, None))
+        current_app=current_app) if viewname else ''
+    return urlunparse((scheme, domain, path, None, None, None))
