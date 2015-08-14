@@ -54,12 +54,12 @@ The ``scheme`` value is optional and defaults to ``http``. You can override this
 Usage
 -------
 
-*Django-urlconfs-xtd* provides a new URL resolver that you can use to resolve urls using the configuration modules defined in your ``URLCONFS_XTD_URL_CONFIGS`` setting. To do this, simply import the ``external_reverse`` function and use it as follows:
+*Django-urlconfs-xtd* provides a new URL resolver that you can use to resolve urls using the configuration modules defined in your ``URLCONFS_XTD_URL_CONFIGS`` setting. To do this, simply import the ``xtd_reverse`` function and use it as follows:
 
 ::
 
-  >> from urlconfs_xtd.urlresolvers import external_reverse
-  >> external_reverse('view-name', 'site_a', kwargs={'slug': 'test'})
+  >> from urlconfs_xtd.urlresolvers import xtd_reverse
+  >> xtd_reverse('view-name', 'site_a', kwargs={'slug': 'test'})
 
 ``site_a`` defines the URL configuration module to use in order to resolve the ``view-name`` URL with the considered arguments.
 

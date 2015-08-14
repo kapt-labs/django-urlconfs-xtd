@@ -7,7 +7,7 @@ from __future__ import unicode_literals
 from django import template
 
 # Local application / specific library imports
-from urlconfs_xtd.urlresolvers import external_reverse
+from urlconfs_xtd.urlresolvers import xtd_reverse
 
 
 register = template.Library()
@@ -21,7 +21,7 @@ def xtd_url(context, external, view, *args, **kwargs):
         {% load urlconfs_xtd_tags %}
         {% xtd_url 'urlconf-id' 'view-reverse-name' %}
     """
-    return external_reverse(view, external, args=args, kwargs=kwargs)
+    return xtd_reverse(external, view, args=args, kwargs=kwargs)
 
 
 @register.simple_tag(takes_context=True)
@@ -32,4 +32,4 @@ def xtd_domain(context, external):
         {% load urlconfs_xtd_tags %}
         {% xtd_domain 'urlconf-id' %}
     """
-    return external_reverse(None, external)
+    return xtd_reverse(external)

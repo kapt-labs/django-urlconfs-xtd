@@ -12,14 +12,14 @@ from six.moves.urllib.parse import urlunparse
 from urlconfs_xtd.conf import settings as urlconfs_settings
 
 
-def external_reverse(
-        viewname, external, args=None, kwargs=None, current_app=None):
+def xtd_reverse(
+        external, viewname=None, args=None, kwargs=None, current_app=None):
     """
     Reverses an external URL from the given parameters. Returns only the domain
     URL if the view name is not defined.
 
-    :param viewname: the name of the URL
     :param external: the external id whose url config will be used for URL reversing
+    :param viewname: the name of the URL
     :param args: positional arguments used for reversing the URL
     :param kwargs: named arguments used for reversing the URL
     :param current_app: hint for the currently executing application
