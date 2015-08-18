@@ -59,7 +59,7 @@ Usage
 ::
 
   >> from urlconfs_xtd.urlresolvers import xtd_reverse
-  >> xtd_reverse('view-name', 'site_a', kwargs={'slug': 'test'})
+  >> xtd_reverse('site_a', 'view-name', kwargs={'slug': 'test'})
 
 ``site_a`` defines the URL configuration module to use in order to resolve the ``view-name`` URL with the considered arguments.
 
